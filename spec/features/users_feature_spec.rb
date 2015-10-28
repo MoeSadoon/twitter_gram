@@ -18,8 +18,6 @@ feature "User can sign in and out" do
     expect(page).not_to have_button('Create Tweet')
   end
 
-
-
   end
 
   context "user signed in on the homepage" do
@@ -27,6 +25,8 @@ feature "User can sign in and out" do
       visit('/')
       click_link('Sign up')
       fill_in('Email', with: 'test@example.com')
+      fill_in('Full name', with: 'name')
+      fill_in('Username', with: 'username')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
       click_button('Sign up')

@@ -3,9 +3,6 @@ require 'rails_helper'
 
 feature 'tweets' do
 
-
-
-
   context 'tweets have been added' do
     before { Tweet.create message: 'My first tweet' }
 
@@ -18,8 +15,6 @@ feature 'tweets' do
 
   context 'adding tweets' do
     scenario 'prompts user to fill out form, then displays the new post' do
-      user = build :user
-      sign_up(user)
       visit '/tweets'
       fill_in 'Message', with: 'My first tweet'
       click_button 'Create Tweet'
@@ -28,14 +23,9 @@ feature 'tweets' do
   end
 
   context 'deleting tweets' do
-    before do
-     @user = create :user
-     @user.tweets.create message: 'My first tweet'
-    end
-
+    before { Tweet.create message: 'My first tweet' }
 
     scenario 'user can delete a tweet' do
-      sign_in(@user)
       visit '/tweets'
       click_link 'delete tweet'
       expect(page).to have_content 'Tweet deleted successfully'
