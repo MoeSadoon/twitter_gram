@@ -3,20 +3,14 @@
 </head>
 <h1>Here's what's happening!</h1>
 
-
-
   <div class="form-group" > <%= render partial: "form" %> </div>
-
-
-
-
 
   <div class='feed'>
   <% if @tweets.any? %>
     <% @tweets.each do |tweet| %>
 
       <br><%= image_tag tweet.user.avatar.url, :size => "50x50" if tweet.user %> <br>
-      <div id='username'><%= tweet.user.email if tweet.user %></div>
+      <div id='username'><%= tweet.user.username if tweet.user %></div>
       <div id='tweet'><br><%= tweet.message %><br></div>
       posted at <%= tweet.created_at.strftime("%H:%M %d %b")%>
     <% if current_user && tweet.user_id == current_user.id %>

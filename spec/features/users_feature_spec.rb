@@ -16,10 +16,7 @@ feature "User can sign in and out" do
     it "must be logged in to create Tweets" do
     visit('/')
     expect(page).not_to have_button('Create Tweet')
-  end
-
-
-
+    end
   end
 
   context "user signed in on the homepage" do
