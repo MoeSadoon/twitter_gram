@@ -11,7 +11,7 @@
 
   <% if user_signed_in? %>
     <br><%= image_tag current_user.avatar.url(:thumb) %>
-    <br>Welcome <%= current_user.email %><br>
+    <br>Welcome <%= current_user.username %><br>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
     <%= link_to "Sign in", new_user_session_path %>
