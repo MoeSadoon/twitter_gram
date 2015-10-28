@@ -7,7 +7,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'bd19939ec753a62e6ec6040577adef3312e2d29664f9b1c72b93054b6cfff6e91e1461959e2613c61b57cd37788ae5d81953e9fcb0b86b459fb2b3a6f4c8a7db'
-
+  config.scoped_views = true
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -39,10 +39,11 @@ Devise.setup do |config|
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
-
+  
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
+
   config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
