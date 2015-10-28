@@ -21,8 +21,14 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class='field'>
+    Add Your <%= f.label :avatar %>:
+    <%= f.file_field :avatar %>
+  </div>
+
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up"bootstrap-3.3.5-dist %>
   </div>
 <% end %>
 

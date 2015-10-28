@@ -1,27 +1,30 @@
-
+<head>
+<%= stylesheet_link_tag 'application' %>
+</head>
 <h1>Here's what's happening!</h1>
 
-<% if current_user %>
-    <%= form_for Tweet.new do |f| %>
-     <div class="form-group">
-      <%= f.label :message %>
-      <%= f.text_field :message, placeholder:"what needs doing?" %>
-     <%= f.submit %>
-    </div>
-  <% end %>
-<% end %>
 
-<ul>
 
+  <div class="form-group" > <%= render partial: "form" %> </div>
+
+
+
+
+
+  <div class='feed'>
   <% if @tweets.any? %>
     <% @tweets.each do |tweet| %>
-      <li>
-        <%= tweet.message %><br><br>
 
-          <% if current_user && tweet.user_id == current_user.id %>
-          <%= link_to "delete tweet", tweet_path(tweet), method: 'delete' %>
-          <% end %>
-      </li>
+      <br><%= image_tag tweet.user.avatar.url, :size => "50x50" if tweet.user %> <br>
+      <div id='username'><%= tweet.user.email if tweet.user %></div>
+      <div id='tweet'><br><%= tweet.message %><br></div>
+      posted at <%= tweet.created_at.strftime("%H:%M %d %b")%>
+    <% if current_user && tweet.user_id == current_user.id %>
+      <br><%= link_to "delete tweet", tweet_path(tweet), method: 'delete' %><br>
+      <% else %>
+      <br><br>
+    <% end %>
     <% end %>
 </ul>
   <% end %>
+</div>
