@@ -1,7 +1,7 @@
 <% if current_user %>
     <%= form_for Tweet.new do |f| %>
       <%= f.label :message  %>
-      <%= f.text_field :message, placeholder:"what needs doing?", :class => 'tweet_area' %>
+      <%= f.text_field :message,  :autocomplete => :off, placeholder:"Write your tweet here", :class => 'tweet_area' %>
       <%= f.submit %>
     <% end %>
 <% end %>
