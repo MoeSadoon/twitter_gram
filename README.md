@@ -1,24 +1,12 @@
+Twittergram
+=================
 
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+Premise
+---------
+A twitter clone built on rails and using jquery for instant posts without the need for page refresh
+Running tests
+-------
+1. Clone this repo
+2. Run  the command `gem install bundle` in project directory
+3. When the installation completes, run `bundle`
+4. Run `rails s` and navigate to `localhost:3000` on your browser
